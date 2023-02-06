@@ -183,7 +183,7 @@ class dibujar:
             
             
 print("start")
-nuevo=dibujar(300,0.054006)
-nuevo.Medidas()
-nuevo.leerGcode("raspberryBoard.ngc")
+dibujo=dibujar(300,0.054006)
+dibujo.Medidas()
+dibujo.leerGcode("raspberryBoard.ngc")
 GPIO.output(15, 1)
