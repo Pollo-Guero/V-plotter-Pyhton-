@@ -1,4 +1,4 @@
-# V-plotter-Pyhton-RPI
+# V-plotter-Python-RPI
 un programa simple de python para leer codigo-G y transformalo al movimiento de un plotter vertical o xy plotter
 
 ### Desventajas
