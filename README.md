@@ -9,15 +9,18 @@ el eje x se movera 5 pasos, no 5 milimetros
 * unicamente acepta movimiento lineal G00 y G01 y no cambia la velocidad entre estos
 ***
 ### Ejecucion:
-en las ultimas lineas del codigo se definen los valores importantes para el correcto funcionamiento del programa
+en las ultimas lineas del codigo usted definen los valores importantes para el correcto funcionamiento del programa
 ```python
 dibujo=dibujar(300,0.054006)
 dibujo.Medidas()
 #dibujo.leerGcode("raspberryBoard.ngc")
 GPIO.output(15, 1)
 ```
+> dibujo=dibujar(300,0.054006)
 la primera de estas lineas crea un objeto de la clase dibujar, los parametros iniciales son la separacion entre las dos cuerdas y los milimetros por paso que recorre la cuerda, este ultimo es diferente dependiendo del diametro de sus poleas y los pasos que tiene que dar el motor para commpletar una vuelta</br>
-para definir las longuitudes iniciales de las cuerdas, tiene que ejecutar el metodo dibujo.Medidas(), este metodo imprimira algo asi:</br>
+> dibujo.Medidas()
+
+esta linea ejecuta el metodo Medidas(), este metodo imprime las cordenadas y longuitudes a las que tiene que **acomodar la herramienta de forma manual antes de comenzar el dibujo**, este metodo imprimira algo asi:</br>
 ```
 cuerdas en pasos: 3927 3927
 cuerdas en mm 212 212
