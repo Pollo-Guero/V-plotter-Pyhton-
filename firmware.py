@@ -42,7 +42,7 @@ class dibujar:
             x=punto[0]
             y=punto[1]
             
-            cuerdaX=sqrt(x**2+y**2) # la trigonometria aqui
+            cuerdaX=sqrt(x**2+y**2)
             cuerdaY=sqrt((self.ancho-x)**2+y**2)
             diferenciax = cuerdaX - self.cuerdaXa + self.decimal_acumuladoX
             if diferenciax >= 1 or diferenciax <= -1 :
@@ -112,7 +112,6 @@ class dibujar:
             stepx=1
         x=x0
         y=y0
-        #print(x,y)
         self.puntos.append([x,y])
         if dx>dy:
             p=dy-dx
@@ -125,7 +124,6 @@ class dibujar:
                 else:
                     y=y+stepy
                     p=p+incNE
-                #print(x,y)
                 self.puntos.append([x,y])
         else:
             p=2*(dx-dy)
@@ -138,7 +136,6 @@ class dibujar:
                 else:
                     x=x+stepx
                     p=p+incNE
-                #print(x,y)
                 self.puntos.append([x,y])
         
         self.moverLinea(self.puntos)
@@ -169,20 +166,16 @@ class dibujar:
                 print(line)
                 
                 c=0
-                for i in line:#extrae los valores de x e y actuales
+                for i in line:
                     c+=1
                     if i =="Z":
                         self.z=float(line[c+1:c+4])
                         self.zeta(self.z)
-#                        print("z",self.z)
-
                     if i =="Y":
                         self.y=float(line[c+1:c+6])
-                       # print("y",self.y)
                     if i =="X":
                         self.x=float(line[c+1:c+6])
- #                       print("x",self.x)
-            #desde aqui indica para moverse
+
             self.bresenham(round(self.xa),round(self.ya),round(self.x),round(self.y))
             self.xa=self.x
             self.ya=self.y
