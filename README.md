@@ -8,6 +8,28 @@ un programa simple de python para leer codigo-G y transformalo al movimiento de 
 el eje x se movera 5 pasos, no 5 milimetros
 * unicamente acepta movimiento lineal G00 y G01 y no cambia la velocidad entre estos
 ***
+### Conecciones:
+Este programa se diseño para controlar dos motores bipolares a travez de sus drivers tipo A4988 o DRV8825 y un servomotor, por lo que esto es lo unico que debemos de conectar.</br></br>
+lo siguiente es la declaracion de pines:
+
+```python
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)   #
+GPIO.setwarnings(False)
+
+GPIO.setup(13, GPIO.OUT) #direccion motor1
+GPIO.setup(11, GPIO.OUT) #pasos  motor1
+GPIO.setup(15, GPIO.OUT) #enable ambos motores
+GPIO.setup(33, GPIO.OUT) #servo motor 
+GPIO.setup(8, GPIO.OUT) # pasos motor2
+GPIO.setup(10, GPIO.OUT) #direccion motor2
+
+servo=GPIO.PWM(33,50)
+servo.start(0)
+```
+En los comentarios del codigo estan directamente los pines a los que debes de conectar cada cosa
+</br>
+***
 ### Ejecucion:
 en las ultimas lineas del codigo usted definen los valores importantes para el correcto funcionamiento del programa
 ```python
