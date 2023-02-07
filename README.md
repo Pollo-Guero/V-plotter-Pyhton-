@@ -17,13 +17,22 @@ dibujo.Medidas()
 GPIO.output(15, 1)
 ```
 > dibujo=dibujar(300,0.054006)
+> 
 la primera de estas lineas crea un objeto de la clase dibujar, los parametros iniciales son la separacion entre las dos cuerdas y los milimetros por paso que recorre la cuerda, este ultimo es diferente dependiendo del diametro de sus poleas y los pasos que tiene que dar el motor para commpletar una vuelta</br>
 > dibujo.Medidas()
 
-esta linea ejecuta el metodo Medidas(), este metodo imprime las cordenadas y longuitudes a las que tiene que **acomodar la herramienta de forma manual antes de comenzar el dibujo**, este metodo imprimira algo asi:</br>
+esta linea ejecuta el metodo Medidas(), este metodo imprime las cordenadas y longuitudes a las que tiene que **acomodar la herramienta de forma manual antes de comenzar el dibujo**, el metodo imprimira algo asi:</br>
 ```
 cuerdas en pasos: 3927 3927
 cuerdas en mm 212 212
 coordenadas iniciales de la herramienta: 2777.5 2777.5
 ```
-los valores importantes son la cuerda en mm y las cordenadas iniciales de la herramienta, la cuerda en pasos puedes ignorarla por ahora. El primero de estos valores le dice que cuan largos deven de estar las cuerdas antes de empezar el dibujo,</br> el segundo valor indica cuales son las cordenadas de la herramienta cuando las cuerdas tienen la longuitud especificada, este valor es utilizado al hora de generar el codigo-G para pocicionarlo en estas cordenadas
+los valores importantes son la cuerda en mm y las cordenadas iniciales de la herramienta, la cuerda en pasos puedes ignorarla por ahora. </br>
+cuerdas en mm 212 212</br>
+Este valor le dice a que longuitud deve de acomodar los hilos **de froma manual antes de comenzar con el dibujo**, </br> 
+coordenadas iniciales de la herramienta: 2777.5 2777.5
+</br>
+Indica cuales son las cordenadas de la herramienta cuando las cuerdas tienen la longuitud especificada, este valor es utilizado al hora de generar el codigo-G para pocicionarlo en estas cordenadas. **Es importante tomar en cuenta estas cordenadas ya que tiene que ser el punto medio del dibujo antes de generar el codigo-G si quiere que quede bien centrado y con la menor deformacion posible** </br>
+<dibujo.leerGcode("raspberryBoard.ngc")
+</br>
+esta linea ejecuta el metodo leerGcode que a diferencia de lo que el nombre sugiere, no solo se encarga de leer el codigo-G tambien lo ejecuta, al ejecutar este metodo, todos los demas metodos encargados de hacer funcionar toda la maquina se ejecutaran creando el dibujo
