@@ -63,3 +63,6 @@ Indica cuales son las cordenadas de la herramienta cuando las cuerdas tienen la 
 
 esta linea ejecuta el metodo leerGcode que a diferencia de lo que el nombre sugiere, no solo se encarga de leer el codigo-G sino que tambien lo ejecuta, al ejecutar este metodo, todos los demas metodos encargados de hacer funcionar toda la maquina tambien se ejecutaran creando el dibujo.</br>
 El parametro que recibe es el archivo que se va a dibujar, recuerde que solo se leen los comandos G00 y G01 y que ambos moveran la herramienta a la misma velocidad 
+***
+# Funcinamiento:
+El funcionamiento es bastante simple; el programa comprueba cada linea del archivo Gcode en busca de las lineas que comienzan con G00 o G01, si encuentra una busca las cordenadas X, Y y Z, estas cordenadas son mandadas a el algoritmo de bresenham de rasterizacion de linas, este regresa una lista con todos los puntos que forman la linea rasterizada,despues se itera sobre estos puntos para calcular la distancia entre los puntos y los motores, penzando en un motor como la cordenada (0,0) esta distancia se resta a la distancia anterior obtenida , la diferencia sera la cantidad de pasos que los motores se moveran, como la diferencia la mayor parte del timepo tendra puntos decimales, hay una funcion que los almacena hasta que la suma de un valor entero
