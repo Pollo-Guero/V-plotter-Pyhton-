@@ -169,12 +169,12 @@ class dibujar:
                 for i in line:
                     c+=1
                     if i =="Z":
-                        self.z=float(line[c+1:c+4])
+                        self.z=float(line[c:c+4])
                         self.zeta(self.z)
                     if i =="Y":
-                        self.y=float(line[c+1:c+6])
+                        self.y=float(line[c:c+6])
                     if i =="X":
-                        self.x=float(line[c+1:c+6])
+                        self.x=float(line[c:c+6])
 
             self.bresenham(round(self.xa),round(self.ya),round(self.x),round(self.y))
             self.xa=self.x
