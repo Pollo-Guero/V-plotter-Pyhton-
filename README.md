@@ -73,3 +73,12 @@ El funcionamiento es bastante simple; el programa comprueba cada linea del archi
 ***
 # Formatos:
 hay caracteristicas del codigo-G que admite este programa que no pueden ser modificadas, como por ejemplo el uso de cordenadas absolutas, sin embargo hay otras que si, y en estas es en las que se tiene que figar antes de ejecutar el programa para obtener una lectura correcta del codigo</br>
+Lo principal es la cantidad de decimales que tiene el codigo-G,
+```python                
+for i in line:
+    c+=1
+    if i =="X":
+        self.x=float(line[c:c+6])
+```
+El funcionamiento de el programa es iterar en cada lina del codigo hazta encontrarse con una X,Y o Z, al encontrarla toma los 6  valores que haya enfrente de la letra y los tranforma a numeros decimales,el problema es cuando uno de esos 6 valores es la siguiente letra, ya que las letras no pueden ser trasformadas a numero, </br> 
+Para asegurarce de que funcionara puede generar el codigo con suficientes decimales, o reducir la cantidad de valores que se leeran, (disminulla el valor que se suma a la variable **_c_**)
