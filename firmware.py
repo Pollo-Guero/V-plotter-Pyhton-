@@ -16,7 +16,7 @@ servo.start(0)
 
 GPIO.output(15, 0)
 
-class dibujar:
+class Dibujar:
     def __init__(self,separacion,ppmm):
         self.Z=10
         self.Za=self.Z
@@ -154,7 +154,7 @@ class dibujar:
                 #levanta
         self.Za=self.Z
         
-    def leerGcode(self,nombre):
+    def LeerGcode(self,nombre):
         self.nombre=nombre
         self.archivo= open(self.nombre,mode="r")
         con=0
@@ -183,7 +183,7 @@ class dibujar:
             
             
 print("start")
-dibujo=dibujar(300,0.054006)
+dibujo=Dibujar(300,0.054006)
 dibujo.Medidas()
-dibujo.leerGcode("raspberryBoard.ngc")
+#dibujo.LeerGcode("raspberryBoard.ngc")
 GPIO.output(15, 1)
